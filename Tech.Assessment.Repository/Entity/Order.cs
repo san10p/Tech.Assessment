@@ -11,7 +11,7 @@ namespace Tech.Assessment.Repository.Entity
         {
             Items = new HashSet<OrderItem>();
         }
-        [Key]
+       
         public string OrderID { get; set; }
         public ICollection<OrderItem> Items { get; set; }
         public DateTime DeliveryOn { get; set; }

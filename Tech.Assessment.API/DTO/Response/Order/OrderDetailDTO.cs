@@ -19,7 +19,7 @@ namespace Tech.Assessment.API.DTO.Response.Order
     }
     public class ItemDetailDTO
     {
-        public int ItemId { get; set; }
+        public int OrderId { get; set; }
         public ProductType ProductType { get; set; }
         public int Quantity { get; set; }
 
