@@ -51,16 +51,15 @@ namespace Tech.Assessment.UnitTest
 
         [Fact]
         public void GetOrder_ReturnsNotFoundError()
-        {
-            var order = GetMockedOrder(null);
+        {            
             _orderRepository.GetAsync(Arg.Any<Expression<Func<Order, bool>>>(), Arg.Any<Expression<Func<Order, object>>[]>())
-                .Returns(order);
+                .Returns((Order)null);
 
             _packageRepository.GetListAsync()
                 .Returns(GetPackageCalcMock());
 
 
-            var response = _orderService.Get("ORD-01").Result;
+            var response = _orderService.Get("ORD-02").Result;
 
 
             Assert.Null(response.Result);
